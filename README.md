@@ -1,7 +1,7 @@
 # Tennis Match Program 
 
-Since only valid tennis match is give, if we just have to find the winner, we can find the last 
-string in the input array( A or B) who will be the winner.
+Since only valid tennis match is given as input , if we just have to find the winner, we can find the last 
+string in the input array( A or B) - who will be the winner.
 
 ## Approach
 - Each point updates the current game_points score. A game is won with at least 4 points and a lead of 2
