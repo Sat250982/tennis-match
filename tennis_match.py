@@ -8,7 +8,7 @@ def opponent(player):
 
 
 def game_won(winner_points, loser_points):
-     if(winner_points >= 4 and ((winner_points-loser_points) == 2)):
+     if(winner_points >= 4 and ((winner_points-loser_points) >= 2)):
          return True
      else:
          return False
