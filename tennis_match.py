@@ -25,7 +25,7 @@ def match_won(winner_games_count, loser_games_count):
 
 
 def tiebreak_won(winner_tiebreak_count, loser_tiebreak_count):
-    """Checks whether the tiebreak won condition"""
+    """Checks whether the tiebreak is won """
     if  ((winner_tiebreak_count >=7) and (winner_tiebreak_count - loser_tiebreak_count >=2)):
         return True
     else:
@@ -39,10 +39,11 @@ def find_winner(tennis_points):
     tiebreak_points = {"A": 0, "B": 0}         # 1,2,3,4,5,6,7
     is_tiebreak = False
 
-
+    #iterating the input arrary
     for point_winner in tennis_points:
         point_loser = opponent(point_winner)
 
+        #check for tie-break and winning criteria in tie-break
         if is_tiebreak:
             tiebreak_points[point_winner] += 1
             if tiebreak_won(tiebreak_points[point_winner],tiebreak_points[point_loser]):
@@ -57,7 +58,7 @@ def find_winner(tennis_points):
                 game_won_count[point_winner] += 1
                 game_points = { "A": 0, "B": 0 }
 
-                #which player won the match
+                #which player won the match/set
                 if match_won(game_won_count[point_winner],game_won_count[point_loser]):
                          return point_winner, game_won_count, None
 
