@@ -72,8 +72,12 @@ def find_winner(tennis_points):
 
 def run_test(name, tennis_points):
     print(f"--- {name} ---")
-    point_winner, game_won_count, tiebreak_points = find_winner(tennis_points)
-    print(f"{point_winner} Won the Game")
+    result = find_winner(tennis_points)
+    if result is None:
+        print(" Invalid Input from user")
+        return
+    point_winner, game_won_count, tiebreak_points = result
+    print(f"{point_winner} Won the Match")
     print(f"Game won count A = {game_won_count['A']}, B = {game_won_count['B']}")
     if tiebreak_points:
         print(f"Tiebreak points A = {tiebreak_points['A']}, B = {tiebreak_points['B']}")
